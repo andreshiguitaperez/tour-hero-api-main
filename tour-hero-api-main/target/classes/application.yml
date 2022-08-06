@@ -1,0 +1,32 @@
+# Server properties
+server:
+  servlet:
+    context-path: /tour-api
+  port: 8080
+
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      default_schema: public
+      ddl-auto: update
+    properties:
+      hibernate:
+        order_inserts: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          batch_size: 50
+          lob:
+            non_contextual_creation: true
+        temp:
+          use_jdbc_metadata_defaults: false
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:postgresql://ec2-18-214-35-70.compute-1.amazonaws.com/dbvbkeq738al0l
+    driver-class-name: org.postgresql.Driver
+    username: isajprsbfrcjgt
+    password: 8b4684180827d5e17132d24347e69df4e1643f8b84a5289159acb510bd1720f7
+    hikari:
+      idle-timeout: 10000
+      maximum-pool-size: 5
